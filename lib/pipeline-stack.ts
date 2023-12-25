@@ -38,7 +38,7 @@ export class PipelineStack extends cdk.Stack {
     }
 }
 
-// 開発環境
+// 開発環境へのデプロイ
 export class DevelopmentStage extends Stage {
     constructor(scope: Construct, id: string, props?: StageProps) {
         super(scope, id, props);

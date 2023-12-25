@@ -10,15 +10,15 @@ export class BucketStack extends cdk.Stack {
     super(scope, id, props);
 
     // s3
-    const bucket1 = new s3.Bucket(this, 'S3Bucket1', {
-      bucketName: 'test-bucket1-fromcdk',
+    const bucket1 = new s3.Bucket(this, 'OutputBucket', {
+      bucketName: 'output-bucket',
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
     });
 
     // s3
-    const bucket2 = new s3.Bucket(this, 'S3Bucket2', {
-      bucketName: 'test-bucket2-fromcdk',
+    const bucket2 = new s3.Bucket(this, 'InputBucket', {
+      bucketName: 'input-bucket',
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
     });

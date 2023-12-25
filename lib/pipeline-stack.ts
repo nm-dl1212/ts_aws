@@ -11,9 +11,9 @@ export class PipelineStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
-        const repo = new codecommit.Repository(this, 'WorkshopRepo', {
-            repositoryName: "WorkshopRepo"
-        });
+        const repo = codecommit.Repository.fromRepositoryName(
+            this, 'WorkshopRepo', 'pipeline-prototype'
+        ) as codecommit.Repository;
 
         // The basic pipeline declaration. This sets the initial structure
         // of our pipeline
